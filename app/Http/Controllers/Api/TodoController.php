@@ -56,14 +56,14 @@ class TodoController extends Controller
      */
     public function update(Request $request, Todo $todo)
     {
-        // $validation=Validator::make($request->all(),[
-        //     'title'=>'required|min:3',
-        //     'description'=>'required|min:3',
-        //     'status'=>'required'
-        // ]);
-        // if ($validation->fails()) {
-        //     return response()->json($validation->errors(), 422);
-        // }
+        $validation=Validator::make($request->all(),[
+            'title'=>'required|min:3',
+            'description'=>'required|min:3',
+            'status'=>'required'
+        ]);
+        if ($validation->fails()) {
+            return response()->json($validation->errors(), 422);
+        }
         try {
             $todo=$todo->update($request->all());
             return response()->json(new TodoResources(true,'success update data',$todo), 200);
