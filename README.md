@@ -42,35 +42,32 @@ Jalankan Aplikasi
     
 ## API Reference
 
+### Access API
+**Required**. Your API key
+
 #### Get all Todo
 
 ```http
   GET /api/todo
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
 #### Get detail Todo
 
 ```http
   GET /api/todo/${slug}
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
-
-#### Get detail Todo
+#### Create Todo
 
 ```http
-  GET /api/todo/${slug}
+  POST /api/todo
 ```
 
-| Parameter | Type     | Description                |
+|    key    | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `api_key` | `string` | **Required**. Your API key |
+|  `title`        | `string` |  Masukan Title Todo        |
+|  `description`  | `text`   |  Masukan description Todo        |
+|  `status`       | `enum`   |  Masukan Status Todo        |
 
 #### Get detail Todo
 
